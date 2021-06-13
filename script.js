@@ -1,5 +1,28 @@
 // Write your JavaScript code here!
 
+//to do - write set up even handler that runs when the form's submit event is triggered: 1stline should have preventDefault
+window.addEventListener("load", function() {
+   let form = this.document.querySelector("form");
+   form.addEventListener("submit",function(event) {
+      let pilotName = document.querySelector("input[name=pilotName]");
+      let copilotName = document.querySelector("input[name=copilotName]");
+      let fuelLevel = document.querySelector("input[name=fuelLevel]");
+      let cargoMass = document.querySelector("input[name=cargoMass]");
+      if (pilotName.value === "" || copilotName.value === "" || fuelLevel.value === ""
+      || cargoMass.value === "" ) {
+         alert("All fields are required!");
+         event.preventDefault();
+      }
+      if (typeof pilotName.value != string || typeof copilotName.value != string ) {
+         alert("Names need to be letters only");
+         event.preventDefault();
+      }
+
+   
+      
+   });
+});
+
 /* This block of code shows how to format the HTML once you fetch some planetary JSON!
 <h2>Mission Destination</h2>
 <ol>
