@@ -8,6 +8,7 @@ window.addEventListener("load", function() {
       let copilotName = document.querySelector("input[name=copilotName]");
       let fuelLevel = (document.querySelector("input[name=fuelLevel]"));
       let cargoMass = (document.querySelector("input[name=cargoMass]"));
+      
       if (pilotName.value === "" || copilotName.value === "" || fuelLevel.value === ""
       || cargoMass.value === "" ) {
          alert("All fields are required!");
