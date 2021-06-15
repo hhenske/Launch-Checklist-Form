@@ -6,8 +6,8 @@ window.addEventListener("load", function() {
    form.addEventListener("submit",function(event) {
       let pilotName = document.querySelector("input[name=pilotName]");
       let copilotName = document.querySelector("input[name=copilotName]");
-      let fuelLevel = Number(document.querySelector("input[name=fuelLevel]"));
-      let cargoMass = Number(document.querySelector("input[name=cargoMass]"));
+      let fuelLevel = (document.querySelector("input[name=fuelLevel]"));
+      let cargoMass = (document.querySelector("input[name=cargoMass]"));
       
       if (pilotName.value === "" || copilotName.value === "" || fuelLevel.value === ""
       || cargoMass.value === "" ) {
@@ -15,17 +15,23 @@ window.addEventListener("load", function() {
          event.preventDefault();
       }
       
-
-      if (typeof pilotName.value != String || typeof copilotName.value != String ) {
-         alert("Names need to be letters only");
+//got code below from W3 schools
+      function allLetter(inputText) {
+         var letters = /^[A-Za-z]+$/;
+         if (inputText.value.match(letters)) {
+            return true
+         } else {
+            alert("Names should be all letters");
+         }
+      }
+      allLetter(pilotName);
+      allLetter(copilotName);
+   
+      
+      if (isNaN(fuelLevel.value) ||  isNaN(cargoMass.value)) {
+         alert("Fuel Level and Cargo Mass must be numbers");
          event.preventDefault();
       }
-      //The above code runs EVEN if the pilot and copilot names are letters
-      
-      // if (typeof fuelLevel.value != Number || typeof cargoMass != Number) {
-      //    alert("Fuel Level and Cargo Mass must be numbers");
-      //    event.preventDefault();
-      // }
 
    
       
