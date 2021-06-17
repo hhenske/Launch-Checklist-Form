@@ -41,9 +41,17 @@ window.addEventListener("load", function() {
 document.getElementById("pilotStatus").innerHTML = `Pilot ${pilotName} is ready for launch`
 document.getElementById("coPilotStatus").innerHTML = `Copilot ${coPilotName} is ready for launch`
 
-
 //2 - if the user submits a fuel level below 10,000 liters, change faultyItems to visible and update fuel status th say "There is not enough fuel for the journey 
 // and the text of the h2 element launchStatus should change to "Shuttle not ready for launch" and color change to red
+if (fuelLevel < 10000){
+   document.getElementById("launchStatus") = "Shuttle not ready for launch"
+   function showElement() {
+      element = document.querySelector("faultyItems");
+      element.style.visibility = 'visible';
+  }//end of visibility function...that doesn't work....I don't guess
+  showElement();
+
+} //end of if statement
 
 //3 -If the user submits a cargo mass that is over 10000 kilogras, change the list to visible
 //update the cargo status stating :there is too mch mass for take oof" and change launchStatus to
