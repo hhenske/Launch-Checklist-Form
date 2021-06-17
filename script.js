@@ -3,6 +3,17 @@
 
 //to do - write set up even handler that runs when the form's submit event is triggered: 1stline should have preventDefault
 window.addEventListener("load", function() {
+
+//json section (might need to go up top)
+let json = [];
+fetch("https://handlers.education.launchcode.org/static/planets.json").then(function(response){
+   response.json().then(function(json) {
+      const destination = document.getElementById("planets"[0]);
+      document.getElementById("missionTarget").innerHTML = destination
+   }) //end of response function
+}) //end of json function
+
+
    let form = this.document.querySelector("form");
    form.addEventListener("submit",function(event) {
       event.preventDefault();
@@ -84,7 +95,6 @@ if (fuelLevel.value > 10000 && cargoMass.value < 10000) {
 //4 - If the shuttle is ready to launch, change the text of launchStatus to green and display "Shuttle is ready for launch"
 // put step 4 above in the if statement and made the other statements into else ifs.
    
-
 
 
    }); //end of form event listener function
