@@ -14,7 +14,7 @@ window.addEventListener("load", function() {
       || cargoMass.value === "" ) {
          alert("All fields are required!");
          event.preventDefault();
-      }
+      } //end of if statement
       
 //got code below from W3 schools
       function allLetter(inputText) {
@@ -23,8 +23,8 @@ window.addEventListener("load", function() {
             return true
          } else {
             alert("Names should be all letters");
-         }
-      }
+         } //end of else
+      } //end of allLetter function
       allLetter(pilotName);
       allLetter(copilotName);
    
@@ -32,18 +32,14 @@ window.addEventListener("load", function() {
       if (isNaN(fuelLevel.value) ||  isNaN(cargoMass.value)) {
          alert("Fuel Level and Cargo Mass must be numbers");
          event.preventDefault();
-      }
+      } // end of if statment
       
-   });
-});
 //to do: the div with id faultyItems should be updated if something is not ready for launch.
 //1 -use template literals to updte the li elements pilotStatus and copilot status to include their names
       ////create function for what to put in launchStatus
-document.getElementById("faultyItems").innerHTML = `
-<li id = "pilotStatus">${pilotName.value}</li>
-<li id = "copilotStatus">${copilotName.value}</li>
-`
 
+document.getElementById("pilotStatus").innerHTML = `Pilot ${pilotName} is ready for launch`
+document.getElementById("coPilotStatus").innerHTML = `Copilot ${coPilotName} is ready for launch`
 
 
 //2 - if the user submits a fuel level below 10,000 liters, change faultyItems to visible and update fuel status th say "There is not enough fuel for the journey 
@@ -55,7 +51,12 @@ document.getElementById("faultyItems").innerHTML = `
 
 //4 - If the shuttle is ready to launch, change the text of launchStatus to green and display "Shuttle is ready for launch"
 
-//</div>
+
+
+
+   }); //end of form event listener function
+}); //end of load function
+
 
 /* This block of code shows how to format the HTML once you fetch some planetary JSON!
 <h2>Mission Destination</h2>
